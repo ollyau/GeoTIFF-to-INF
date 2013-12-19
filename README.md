@@ -1,4 +1,4 @@
-GeoTIFF to Resample INF
+GeoTIFF to INF
 ==============
 
 This program parses the metadata of a georectified image and allows the user to create an INF file containing the positional data of the image for use with the FSX Resample tool.  This allows the user to edit the source imagery without worrying about needing to re-georectify or calculate the positional data for the INF file manually.
