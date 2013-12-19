@@ -1,0 +1,63 @@
+﻿<Window x:Class="GeoTiffToInf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GeoTiffToInf"
+        Title="GeoTIFF to Resample INF" SizeToContent="Height"  Width="525" ResizeMode="CanMinimize">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="File name: "           Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="0" />
+        <TextBlock Text="Image Width: "         Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="1" />
+        <TextBlock Text="Image Height: "        Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="2" />
+        <TextBlock Text="Longitude (left): "    Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="3" />
+        <TextBlock Text="Latitude (top): "      Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="4" />
+        <TextBlock Text="Pixel Scale (X): "     Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="5" />
+        <TextBlock Text="Pixel Scale (Y): "     Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="6" />
+        <!--<TextBlock Text="GEOMODEL: "        Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="7" />
+        <TextBlock Text="GEORASTER: "           Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="8" />
+        <TextBlock Text="GeographicType: "      Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="9" />
+        <TextBlock Text="GeogAngularUnits: "    Padding="2" TextAlignment="Right" Grid.Column="0" Grid.Row="10" />-->
+
+        <TextBlock Text="{Binding Path=FileName}" Padding="2" Grid.Column="1" Grid.Row="0" />
+        <TextBlock Text="{Binding Path=ImageWidth}" Padding="2" Grid.Column="1" Grid.Row="1" />
+        <TextBlock Text="{Binding Path=ImageHeight}" Padding="2" Grid.Column="1" Grid.Row="2" />
+        <TextBlock Text="{Binding Path=LEFT_LONG}" Padding="2" Grid.Column="1" Grid.Row="3" />
+        <TextBlock Text="{Binding Path=TOP_LAT}" Padding="2" Grid.Column="1" Grid.Row="4" />
+        <TextBlock Text="{Binding Path=dXScale}" Padding="2" Grid.Column="1" Grid.Row="5" />
+        <TextBlock Text="{Binding Path=dYScale}" Padding="2" Grid.Column="1" Grid.Row="6" />
+        <!--<TextBlock Text="{Binding Path=GEOMODEL}" Padding="2" Grid.Column="1" Grid.Row="7" />
+        <TextBlock Text="{Binding Path=GEORASTER}" Padding="2" Grid.Column="1" Grid.Row="8" />
+        <TextBlock Text="{Binding Path=GeographicType}" Padding="2" Grid.Column="1" Grid.Row="9" />
+        <TextBlock Text="{Binding Path=GeogAngularUnits}" Padding="2" Grid.Column="1" Grid.Row="10" /> -->
+
+        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="11" HorizontalAlignment="Right">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="5,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button Content="Save resample INF" VerticalAlignment="Top" Padding="3"  Click="Button_Click_1"/>
+            <Button Content="Choose a file" VerticalAlignment="Top" Padding="3"  Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
