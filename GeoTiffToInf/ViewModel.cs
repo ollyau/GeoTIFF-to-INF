@@ -19,8 +19,6 @@ namespace GeoTiffToInf {
             gt = new GeoTiff();
             // Get property changed events from the model and trigger the property changed event in the view model
             gt.PropertyChanged += (sender, args) => base.OnPropertyChanged(args.PropertyName);
-
-            //gt.initGeoTiff(@"F:\Downloads\m37122h3se_wgs84.tif"); // to make things quicker to debug
         }
 
         /// <summary>
